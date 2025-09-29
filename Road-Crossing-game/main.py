@@ -9,7 +9,7 @@ window.bgcolor("black")
 window.title("Road Crossing Game")
 window.tracer(0)
 
-car = Car()
+cars = [Car()]
 
 game_end = False
 
@@ -17,6 +17,23 @@ while not game_end:
     time.sleep(0.1)
     window.update()
 
-    car.move()
+    for car in cars:
+        car.move()
+
+    new_car = Car()
+
+    # relocate Car object if it overlaps with another
+    while True:
+        overlap = False
+        for car in cars:
+            if new_car.distance(car) < 60:
+                new_car.relocate()
+                overlap = True
+                break
+
+        if not overlap:
+            break
+
+    cars.append(new_car)
 
 window.exitonclick()
