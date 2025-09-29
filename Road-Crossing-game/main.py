@@ -17,4 +17,6 @@ while not game_end:
     time.sleep(0.1)
     window.update()
 
+    car.move()
+
 window.exitonclick()
