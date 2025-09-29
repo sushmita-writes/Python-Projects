@@ -1,0 +1,7 @@
+W_HEIGHT = 550
+W_WIDTH = 850
+
+MAX_YCOR = int(W_HEIGHT / 2) - 25
+MAX_XCOR = int(W_WIDTH / 2) - 50
+
+BASE_SPEED = 0.05
