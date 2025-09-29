@@ -6,3 +6,4 @@ Y_MAX = int(W_HEIGHT / 2)
 CAR_SPEED = 5
 
 FONT = ("Times New Roman", 20, "Bold")
+
