@@ -42,7 +42,7 @@ A classic Snake game implementation using Python's Turtle graphics library.
 - `scoreboard.py` - Score display and game over screen
 
 ## Screenshots
-![img](/screenshots/1.png)
-![img](/screenshots/2.png)
+![img](screenshots/1.png)
+![img](screenshots/2.png)
 
 ## Enjoy the game! 🎮
