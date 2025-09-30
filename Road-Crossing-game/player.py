@@ -9,7 +9,10 @@ class Player(Turtle):
         self.shape("turtle")
         self.penup()
         self.setheading(90)
-        self.teleport(x=0, y=-ROAD_EDGE_Y - 30)
+        self.goto_start()
 
     def move_up(self):
         self.forward(10)
+
+    def goto_start(self):
+        self.teleport(x=0, y=-ROAD_EDGE_Y - 20)

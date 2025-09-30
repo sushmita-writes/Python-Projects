@@ -1,5 +1,5 @@
 from turtle import Screen
-from configure import W_HEIGHT, W_WIDTH
+from configure import W_HEIGHT, W_WIDTH, ROAD_EDGE_Y
 from generate_car import Car
 from road import Road
 from player import Player
@@ -34,6 +34,11 @@ while not game_end:
     if interval % 5 == 0:
         cars.append(Car())
     interval += 1
+
+    # if player has crossed the road, return it to start
+    if my_player.ycor() > ROAD_EDGE_Y + 10:
+        my_player.goto_start()
+
 
 
 window.exitonclick()
