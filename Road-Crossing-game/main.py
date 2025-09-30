@@ -13,6 +13,11 @@ window.tracer(0)
 
 my_road = Road()
 my_player = Player()
+
+
+window.listen()
+window.onkey(fun=my_player.move_up, key="Up")
+
 cars = [Car()]
 
 game_end = False
