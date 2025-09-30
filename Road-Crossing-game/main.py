@@ -31,6 +31,8 @@ while not game_end:
                 overlap = True
                 break
 
+        print("Stuck on loop?")
+
         if not overlap:
             break
 
