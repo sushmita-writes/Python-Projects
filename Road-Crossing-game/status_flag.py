@@ -16,3 +16,11 @@ class Level(Turtle):
         self.clear()
         self.level += 1
         self.write(arg=f"LEVEL: {self.level}", align="left", font=FONT)
+
+class GameOver(Turtle):
+
+    def __init__(self):
+        super().__init__()
+        self.hideturtle()
+        self.color("tomato")
+        self.write(arg="GAME OVER", align="center", font=FONT)

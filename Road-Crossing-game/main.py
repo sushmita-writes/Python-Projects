@@ -3,7 +3,7 @@ from configure import W_HEIGHT, W_WIDTH, ROAD_EDGE_Y, car_speed, increase_speed_
 from generate_car import Car
 from road import Road
 from player import Player
-from level_flag import Level
+from status_flag import Level, GameOver
 import time
 
 window = Screen()
@@ -30,6 +30,11 @@ while not game_end:
 
     for car in cars:
         car.move(car_speed)
+        # detect collision with cars
+        if my_player.distance(car) < 20:
+            game_over = GameOver()
+            game_end = True
+            break
 
     # the new car to generate at certain interval
     if interval % 5 == 0:
