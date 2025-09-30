@@ -7,7 +7,7 @@ ROAD_EDGE_Y = 180 # road's stretch_wid is 18
 
 car_speed = 5
 
-FONT = ("Times New Roman", 20, "Bold")
+FONT = ("Courier New", 20, "bold")
 
 light_colors = [
     "lightcoral", "lightseagreen", "lightskyblue", "lightpink", "lightsalmon",

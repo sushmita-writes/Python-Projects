@@ -3,6 +3,7 @@ from configure import W_HEIGHT, W_WIDTH, ROAD_EDGE_Y
 from generate_car import Car
 from road import Road
 from player import Player
+from level_flag import Level
 import time
 
 window = Screen()
@@ -13,7 +14,7 @@ window.tracer(0)
 
 my_road = Road()
 my_player = Player()
-
+level = Level()
 
 window.listen()
 window.onkey(fun=my_player.move_up, key="Up")
@@ -35,10 +36,9 @@ while not game_end:
         cars.append(Car())
     interval += 1
 
-    # if player has crossed the road, return it to start
+    # if player has crossed the road, level up and return it to start
     if my_player.ycor() > ROAD_EDGE_Y + 10:
+        level.update()
         my_player.goto_start()
-
-
 
 window.exitonclick()
