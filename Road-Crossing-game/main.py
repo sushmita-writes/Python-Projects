@@ -12,6 +12,7 @@ window.tracer(0)
 cars = [Car()]
 
 game_end = False
+interval = 1
 
 while not game_end:
     time.sleep(0.1)
@@ -20,22 +21,10 @@ while not game_end:
     for car in cars:
         car.move()
 
-    new_car = Car()
+    # get the new car to generate only after certain interval
+    if interval % 5 == 0:
+        cars.append(Car())
+    interval += 1
 
-    # relocate Car object if it overlaps with another
-    while True:
-        overlap = False
-        for car in cars:
-            if new_car.distance(car) < 60:
-                new_car.relocate()
-                overlap = True
-                break
-
-        print("Stuck on loop?")
-
-        if not overlap:
-            break
-
-    cars.append(new_car)
 
 window.exitonclick()
