@@ -6,10 +6,11 @@ Y_MAX = int(W_HEIGHT / 2)
 ROAD_EDGE_Y = 180 # road's stretch_wid is 18
 
 car_speed = 5
+increase_speed_by = 1.2
 
 FONT = ("Courier New", 20, "bold")
 
-light_colors = [
+colors = [
     "lightcoral", "lightseagreen", "lightskyblue", "lightpink", "lightsalmon",
     "lightyellow", "lightgreen", "lightblue", "lightcyan", "lavender",
     "thistle", "plum", "violet", "orchid", "magenta", "hotpink", "deeppink",

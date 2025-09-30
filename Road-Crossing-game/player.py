@@ -15,4 +15,4 @@ class Player(Turtle):
         self.forward(10)
 
     def goto_start(self):
-        self.teleport(x=0, y=-ROAD_EDGE_Y - 20)
+        self.teleport(x=0, y=-ROAD_EDGE_Y - 40)

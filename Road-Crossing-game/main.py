@@ -1,5 +1,5 @@
 from turtle import Screen
-from configure import W_HEIGHT, W_WIDTH, ROAD_EDGE_Y
+from configure import W_HEIGHT, W_WIDTH, ROAD_EDGE_Y, car_speed, increase_speed_by
 from generate_car import Car
 from road import Road
 from player import Player
@@ -17,7 +17,7 @@ my_player = Player()
 level = Level()
 
 window.listen()
-window.onkey(fun=my_player.move_up, key="Up")
+window.onkeypress(fun=my_player.move_up, key="Up")
 
 cars = [Car()]
 
@@ -29,7 +29,7 @@ while not game_end:
     window.update()
 
     for car in cars:
-        car.move()
+        car.move(car_speed)
 
     # the new car to generate at certain interval
     if interval % 5 == 0:
@@ -39,6 +39,7 @@ while not game_end:
     # if player has crossed the road, level up and return it to start
     if my_player.ycor() > ROAD_EDGE_Y + 10:
         level.update()
+        car_speed *= increase_speed_by
         my_player.goto_start()
 
 window.exitonclick()
