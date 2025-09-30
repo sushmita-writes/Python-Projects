@@ -23,7 +23,7 @@ while not game_end:
     for car in cars:
         car.move()
 
-    # get the new car to generate only after certain interval
+    # the new car to generate at certain interval
     if interval % 5 == 0:
         cars.append(Car())
     interval += 1
