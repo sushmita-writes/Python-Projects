@@ -2,7 +2,6 @@ from turtle import Turtle
 from configure import X_MAX, ROAD_EDGE_Y, car_speed, light_colors
 import random
 
-
 class Car(Turtle):
 
     def __init__(self):

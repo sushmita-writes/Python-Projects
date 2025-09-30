@@ -2,6 +2,7 @@ from turtle import Screen
 from configure import W_HEIGHT, W_WIDTH
 from generate_car import Car
 from road import Road
+from player import Player
 import time
 
 window = Screen()
@@ -10,8 +11,9 @@ window.bgcolor("gray80")
 window.title("Road Crossing Game")
 window.tracer(0)
 
-cars = [Car()]
 my_road = Road()
+my_player = Player()
+cars = [Car()]
 
 game_end = False
 interval = 1
