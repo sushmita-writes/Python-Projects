@@ -52,14 +52,13 @@ while not game_over:
 
     # Detect if snake hits the wall
     if hit_right() or hit_left() or hit_up() or hit_down():
-        game_over = True
-        my_scoreboard.game_over()
+        my_scoreboard.update_high_score()
+        my_snake.reset()
 
     # Detect if snake eats its tail
     for segment in my_snake.segments[1:]:  # slicing head
         if my_snake.head.distance(segment) < 10:
-            game_over = True
-            my_scoreboard.game_over()
-
+            my_scoreboard.update_high_score()
+            my_snake.reset()
 
 window.exitonclick()

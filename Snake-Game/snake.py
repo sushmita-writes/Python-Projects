@@ -7,11 +7,10 @@ class Snake:
         self.segments = []
 
         # initialize snake
-        self.get_segment() #head
+        self.get_segment()  # head
         self.head = self.segments[0]
-        for _ in range(2): #body
+        for _ in range(2):  # body
             self.grow()
-
 
     def get_segment(self):
         segment = Turtle(shape="square")
@@ -34,6 +33,16 @@ class Snake:
             self.segments[i].goto(x=new_x, y=new_y)
         self.head.forward(UNIT_DISTANCE)
 
+    def reset(self):
+        for segment in self.segments:
+            segment.goto(1000, 1000)
+
+        self.segments.clear()
+        self.get_segment()  # head
+        self.head = self.segments[0]
+        for _ in range(2):  # body
+            self.grow()
+
     def up(self):
         if self.head.heading() != 270:
             self.head.setheading(90)
@@ -49,4 +58,3 @@ class Snake:
     def left(self):
         if self.head.heading() != 0:
             self.head.setheading(180)
-
