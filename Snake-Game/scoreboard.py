@@ -16,26 +16,28 @@ class Scoreboard(Turtle):
         self.pencolor("white")
         self.display()
 
-
     def display(self):
         self.clear()
-        self.write(arg=f"Score: {self.score} | High Score: {self.high_score}", align='center', font=('Times New Roman', 10, 'bold'))
+        self.write(arg=f"Score: {self.score} | High Score: {self.high_score}", align='center', font=('Times New Roman', 15, 'bold'))
 
     def increment_score(self):
         self.score += 1
         self.display()
 
-    def game_over(self):
-        self.goto(0, 0)
-        self.clear()
-        self.pencolor("red")
-        self.write(arg=f"GAME OVER", align='center', font=('Arial', 18, 'bold'))
-        self.pencolor("white")
-        self.goto(0, -18)
-        self.write(arg=f"Final Score: {self.score}", align='center', font=('Arial', 10, 'normal'))
-
     def update_high_score(self):
         if self.score > int(self.high_score):
             self.high_score = self.score
+            with open("data.txt", mode='w') as file:
+                file.write(str(self.high_score))
         self.score = 0
         self.display()
+
+    # def game_over(self):
+    #     self.goto(0, 0)
+    #     self.clear()
+    #     self.pencolor("red")
+    #     self.write(arg=f"GAME OVER", align='center', font=('Arial', 18, 'bold'))
+    #     self.pencolor("white")
+    #     self.goto(0, -18)
+    #     self.write(arg=f"Final Score: {self.score}", align='center', font=('Arial', 10, 'normal'))
+
